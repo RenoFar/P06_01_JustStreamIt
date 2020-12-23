@@ -1,42 +1,182 @@
-*{
-    border: 1px solid black;
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* end of reset css */
+
+/* *{
+    border: 1px solid black !important;
+} */
+
 .header {
     display: flex;
     align-items: center;
     border: solid 1px black;
-    height: 100px;
-    width: auto;
-    background-color: rgb(42, 70, 70);
+    height: 80px;
+    width: 90%;
+    margin: auto;
+    background-color: rgb(66, 79, 94);
     color: #ddd;
 }
 
 .header__siteTitle {
-    padding-left: 10px;
-    width: 50%;
+    padding-left: 15px;
+    flex-grow: 1;
+    font-size: x-large;
 }
 
 .header nav{
-    width: 50%;
+    flex-grow: 1;
+    font-size: large;
 }
 
 ul.header__mainMenu li{
-    display: inline;
+    margin-right: 15px;
+    display: inline-block;
 	list-style: none;
 }
 
-#bestMovie {
+.section {
     display: flex;
-    align-items: center;
-    border: solid 10px black;
-    height: 300px;
-    width: auto;
+    border: solid 5px black;
+    height: 200px;
+    width: 90%;
+    margin: 30px auto;
     background-color: whitesmoke;
     color: #000000;
 
 }
 
+.section--hero{
+    background-color:whitesmoke;
+    /* background-image: image(); */
+}
+
+.section__leftHero{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+}
+
+.section__leftHero h2{
+    font-weight: bolder;
+    font-size: large;
+    padding: 3px;
+}
+
+.section__leftHero .section__play{
+    border: 0px;
+    border-radius: 15px;
+    background-color: red;
+    color: #fff;
+    padding: 3px 15px;
+    margin: 3px;
+
+}
+
+.section__rightHero{
+    display: flex;
+    flex-grow: 4;
+    align-items: center;
+
+}
+
+a{
+    color: #000;
+    flex-grow: 1;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.section__title{
+    text-align: center;
+    font-weight: bolder;
+    font-size: large;
+    margin: 30px auto;
+}
+
+
+.section--category{
+    display: flex;
+    height: 100px;
+    border: 0px;
+}
+
 .section__content{
     display: flex;
+    flex-grow: 1;
+}
+
+.section__arrow{
+    display: flex;
+    align-items: center;
+}
+
+.section__arrow a{
+    text-decoration: none;
+    color: #000;
+    font-size: larger;
+}
+
+.tiles{
+    display: flex;
+    flex-grow: 1;
     
+}
+
+.tiles__tile{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    border: 5px solid black;
 }
