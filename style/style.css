@@ -131,7 +131,6 @@ ul.header__mainMenu li{
 
 a{
     color: #000;
-    flex-grow: 1;
     padding: 5px;
     text-decoration: none;
 }
@@ -142,7 +141,6 @@ a{
     font-size: large;
     margin: 30px auto;
 }
-
 
 .section--category{
     display: flex;
@@ -161,9 +159,7 @@ a{
 }
 
 .section__arrow a{
-    text-decoration: none;
-    color: #000;
-    font-size: larger;
+    font-size: x-large;
 }
 
 .tiles{
