@@ -1,14 +1,37 @@
-let btnLeft = document.getElementsByClassName("arrow--left")[0];
+for (i=0; i<4; i++) {
+    document.getElementsByClassName("arrow--left")[i]
+    .addEventListener("click", function(event){
+        event.preventDefault();
+        showTilesLeft(i);
+    });
+    document.getElementsByClassName("arrow--right")[i]
+    .addEventListener("click", function(event){
+        event.preventDefault();
+        showTilesRight(i);
+    });
+}
 
-btnLeft.addEventListener("click", function(event){
-    event.preventDefault();
-    // console.log("ok");
-} );
+const showTilesLeft = (i) => {
+    let tilesLeft = document
+    .getElementsByClassName("section--category")[i]
+    .getElementsByClassName("imageModal")[6];
+    tilesLeft.style.width = "0%";
+};
 
-let btnright = document.getElementsByClassName("arrow--right")[0];
+const showTilesRight = (i) => {
+    let tilesRight = document
+    .getElementsByClassName("section--category")[i]
+    .getElementsByClassName("imageModal")[6];
+    tilesRight.style.width = "100%";
 
-btnright.addEventListener("click", function(event){
-    event.preventDefault();
-    // console.log("ok");
-} );
 
+// let btnLeft = document.getElementsByClassName("arrow--left");
+
+// let btnright = document.getElementsByClassName("arrow--right");
+
+    // const showTilesright = () => {
+//     btnright.addEventListener("click", function(event){
+//         event.preventDefault();
+//         console.log("ok");
+//     } );
+// }
