@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style/style.css" />
   <script type="module" src="/js/requestApi.js"></script>
-  <script type="module" src="/js/fonctions.js"></script>
+  <script type="text/javascript" src="/js/fonctions.js"></script>
   <title>JustStreamIt</title>
 </head>
 <body>
@@ -39,7 +39,8 @@
   <section id="bestRating" class="section section--category">
     <div class="section__content">
       <div class="section__arrow">
-        <a href="" class="arrow--left">&#11013</a>
+        <a href="" class="arrow--left" 
+        onclick="showTilesLeft('bestMovie')">&#11013</a>
       </div>
       <div class="tiles">
         <div class="tiles__tile imageModal">
@@ -58,7 +59,8 @@
         </div>
       </div>
       <div class="section__arrow">
-        <a href="" class="arrow--right">&#10145</a>
+        <a href="" class="arrow--right"
+        onclick="showTilesRight('bestMovie')">&#10145</a>
       </div>
   </div>
   </section>
