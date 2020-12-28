@@ -47,8 +47,9 @@ const requestApiCategory = (urlRequest, index, elementQty) => {
 const fillImageCategory = (category) => {
     return new Promise(resolve => {
         let imageCategory = document.querySelectorAll(category);
+        console.log("imageCategory.lenght " + imageCategory.length);
         let imageNumber = 6;
-        if (category == "#bestMovie div.section__rightHero") {
+        if (category == "#bestMovie .section__rightHero") {
             imageNumber = 0;
         }
         console.log("imageNumber " + imageNumber);
@@ -62,8 +63,8 @@ const fillImageCategory = (category) => {
 
 const main=() => {
     loopApiRequest()
-    .then(fillImageCategory("#bestMovie div.section__rightHero")
-    )
+    .then(fillImageCategory("#bestMovie .section__rightHero"))
+    .then(fillImageCategory("#bestRating .tiles__tile"));
 };
 
 main();
