@@ -1,6 +1,6 @@
 const showTilesRight = (cat) => {
-    console.log("showTilesRight");
-    let tiles = document.querySelectorAll(cat + ' div.tiles-tile');
+    let selectCat = cat + ' .tiles__tile'
+    let tiles = document.querySelectorAll(selectCat);
     for(i = 0; i < tiles.length; i++){
         if(i < 3){
             tiles[i].style.display = "none";
@@ -12,8 +12,8 @@ const showTilesRight = (cat) => {
 }
 
 const showTilesLeft = (cat) => {
-    console.log("showTilesLeft");
-    let tiles = document.querySelectorAll(cat + ' div.tiles-tile');
+    let selectCat = cat + ' .tiles__tile'
+    let tiles = document.querySelectorAll(selectCat);
     for(i = 0; i < tiles.length; i++){
         if(i < 3){
             tiles[i].style.display = "flex";
