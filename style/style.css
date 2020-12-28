@@ -85,7 +85,7 @@ ul.header__mainMenu li{
 .section {
     display: flex;
     border: solid 3px black;
-    height: 200px;
+    height: 250px;
     width: 90%;
     margin: 30px auto;
     background-color: whitesmoke;
@@ -143,7 +143,7 @@ ul.header__mainMenu li{
 
 .section--category{
     display: flex;
-    height: 100px;
+    height: 150px;
     border: 0px;
 }
 
@@ -178,4 +178,9 @@ ul.header__mainMenu li{
     margin: 3px;
     border: 3px solid black;
     background-color: #000;
+}
+
+.tiles__tile:hover {
+    transform: scale(1.1);
+    transition: 250ms all;
 }
