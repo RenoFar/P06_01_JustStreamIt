@@ -163,7 +163,6 @@ ul.header__mainMenu li{
     transition: 250ms all;
 }
 
-
 .section__arrow:hover {
     transform: scale(2);
 }
@@ -231,7 +230,7 @@ ul.header__mainMenu li{
   .close {
     color: #aaa;
     float: right;
-    font-size: 28px;
+    font-size: xx-large;
     font-weight: bold;
   }
   
