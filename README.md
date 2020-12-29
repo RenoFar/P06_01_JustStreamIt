@@ -9,7 +9,7 @@ Elle doit permettre de visualiser en temps réel un classement de films et d'ouv
 ## Pré-requis:
 
 - HTML 5, CSS 3, Javascript, DOM, AJAX
-- Requeter une API
+- Requête API
 - Utilisation d \'un terminal (interface en ligne de commande)
 
 ## Installation:
