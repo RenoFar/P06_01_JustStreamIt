@@ -14,6 +14,6 @@ Elle doit permettre de visualiser en temps réel un classement de films et d'ouv
 
 ## Installation:
 
-1. Cloner le projet depuis cette [page](https://github.com/RenoFar/P06_01_JustStreamIt "page")
+1. Cloner le projet depuis cette [page](https://github.com/RenoFar/P06_01_JustStreamIt "https://github.com/RenoFar/P06_01_JustStreamIt")
 2. Installer l'API locale fourni dans le dossier cloner et suivre les instructions de son README pour finaliser son installation.
 3. ouvrir le fichier index.html dans votre navigateur internet.
