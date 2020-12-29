@@ -31,15 +31,18 @@ function fillImageCat(categorylist, category) {
     let imageNumber = 6;
     if (categorylist == "#bestMovie .section__rightHero") {
         imageCategory[0].style.backgroundImage = `url(${resultApi[0][0].image_url})`;
+        document.getElementById("titleHero").innerHTML = resultApi[0][0].title;
+        document.getElementById("textHero").innerHTML = "imdb_score: " + resultApi[0][0].imdb_score;
+    } else {
+        console.log("category " + category);
+        while (imageNumber>=0){
+            imageCategory[imageNumber].style.backgroundImage = `url(${resultApi[category][imageNumber].image_url})`;
+            console.log("resultApi[category][imageNumber].image_url : " + resultApi[category][imageNumber].image_url)
+            imageNumber--;
+        };
+        console.log("fillImageCategory end");
     }
-    console.log("category " + category);
-    while (imageNumber>=0){
-        imageCategory[imageNumber].style.backgroundImage = `url(${resultApi[category][imageNumber].image_url})`;
-        console.log("resultApi[category][imageNumber].image_url : " + resultApi[category][imageNumber].image_url)
-        imageNumber--;
-    };
-    console.log("fillImageCategory end");
-};
+   };
 
 function loopFillImageCat() {
     console.log("loopFillImageCat start");
