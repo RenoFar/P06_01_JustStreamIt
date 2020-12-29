@@ -17,6 +17,7 @@ const categoryList = [
     "#bestMovie .section__rightHero",
 ];
 
+
 let resultApi = [
     [],
     [],
@@ -25,52 +26,54 @@ let resultApi = [
 ];
 
 function fillImageCat(categorylist, category) {
-    console.log("fillImageCat start");
+    // console.log("fillImageCat start");
     let imageCategory = document.querySelectorAll(categorylist);
-    console.log("imageCategory.lenght " + imageCategory.length);
+    // console.log("imageCategory.lenght " + imageCategory.length);
     let imageNumber = 6;
     if (categorylist == "#bestMovie .section__rightHero") {
         imageCategory[0].style.backgroundImage = `url(${resultApi[0][0].image_url})`;
         document.getElementById("titleHero").innerHTML = resultApi[0][0].title;
-        document.getElementById("textHero").innerHTML = "imdb_score: " + resultApi[0][0].imdb_score;
+        document.getElementById("textHero").innerHTML = "imdb score: " + resultApi[0][0].imdb_score;
     } else {
-        console.log("category " + category);
+        // console.log("category " + category);
         while (imageNumber>=0){
             imageCategory[imageNumber].style.backgroundImage = `url(${resultApi[category][imageNumber].image_url})`;
-            console.log("resultApi[category][imageNumber].image_url : " + resultApi[category][imageNumber].image_url)
+            // console.log("resultApi[category][imageNumber].image_url : " + resultApi[category][imageNumber].image_url)
             imageNumber--;
         };
-        console.log("fillImageCategory end");
+        // console.log("fillImageCategory end");
     }
    };
 
 function loopFillImageCat() {
-    console.log("loopFillImageCat start");
-    console.log("categoryList.length: " + categoryList.length)
+    // console.log("loopFillImageCat start");
+    // console.log("categoryList.length: " + categoryList.length)
     for (let category=0; category<categoryList.length; category++){
         fillImageCat(categoryList[category], category);
     }
 };
 
 function requestApi(urlRequest, index, elementQty) {
-        console.log("requestApi start");
-        console.log("requestApi - index & elmtQty :" + index + " & " + elementQty);
+        // console.log("requestApi start");
+        // console.log("requestApi - index & elmtQty :" + index + " & " + elementQty);
         fetch(urlRequest)
-            .then(response => response.json())
+            .then(response => response.json()
             // .then(function(response) { return response.json()})
-            .then(function(jsonResponse) {
-                console.log("jsonResponse " + jsonResponse);
-                for (let element=0; element<elementQty; element++){
-                    console.log("element: " + element);
-                    resultApi[index].push(jsonResponse.results[element]);
-                    }
-            })
-        console.log("requestApiCategory end");
+                .then(function(jsonResponse) {
+                    // console.log("jsonResponse " + jsonResponse);
+                    for (let element=0; element<elementQty; element++){
+                        // console.log("element: " + element);
+                        resultApi[index].push(jsonResponse.results[element]);
+                        }
+                        loopFillImageCat();
+                })
+            )
+        // console.log("requestApiCategory end");
 };
 
 function loopApiRequest() {
-    console.log("loopApiRequest start");
-    console.log("urlRequest.length: " + urlRequest.length)
+    // console.log("loopApiRequest start");
+    // console.log("urlRequest.length: " + urlRequest.length)
     for (let i=0; i<urlRequest.length; i++){
         requestApi(urlRequest[i][0], i, 5);
         requestApi(urlRequest[i][1], i, 2);
@@ -85,7 +88,7 @@ function main() {
     //         break
     //     }
     // }
-    setTimeout(() => loopFillImageCat(), 900);
+    // setTimeout(() => loopFillImageCat(), 900);
     // loopFillImageCat();
 };
 
