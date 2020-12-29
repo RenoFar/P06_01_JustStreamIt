@@ -99,6 +99,7 @@ ul.header__mainMenu li{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    max-width: 50%;
 }
 
 h2{
