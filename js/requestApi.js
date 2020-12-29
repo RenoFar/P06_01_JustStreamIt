@@ -1,98 +1,98 @@
-const urlRequest = [
-    ['http://localhost:8000/api/v1/titles/?sort_by=-imdb_score',
-    'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page=2'],
-    ['http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Action',
-    'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Action&page=2'],
-    ['http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Animation',
-    'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Animation&page=2'],
-    ['http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=History',
-    'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=History&page=2']
-];
+// const urlRequest = [
+//     ['http://localhost:8000/api/v1/titles/?sort_by=-imdb_score',
+//     'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&page=2'],
+//     ['http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Action',
+//     'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Action&page=2'],
+//     ['http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Animation',
+//     'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=Animation&page=2'],
+//     ['http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=History',
+//     'http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&genre=History&page=2']
+// ];
 
-const categoryList = [
-    "#bestRating .imageModal",
-    "#categoryOne .imageModal",
-    "#categoryTwo .imageModal",
-    "#categoryThree .imageModal",
-    "#bestMovie .section__rightHero",
-];
+// const categoryList = [
+//     "#bestRating .imageModal",
+//     "#categoryOne .imageModal",
+//     "#categoryTwo .imageModal",
+//     "#categoryThree .imageModal",
+//     "#bestMovie .section__rightHero",
+// ];
 
 
-let resultApi = [
-    [],
-    [],
-    [],
-    [],
-];
+// let resultApi = [
+//     [],
+//     [],
+//     [],
+//     [],
+// ];
 
-function fillImageCat(categorylist, category) {
-    // console.log("fillImageCat start");
-    let imageCategory = document.querySelectorAll(categorylist);
-    // console.log("imageCategory.lenght " + imageCategory.length);
-    let imageNumber = 6;
-    if (categorylist == "#bestMovie .section__rightHero") {
-        imageCategory[0].style.backgroundImage = `url(${resultApi[0][0].image_url})`;
-        document.getElementById("titleHero").innerHTML = resultApi[0][0].title;
-        document.getElementById("textHero").innerHTML = "imdb score: " + resultApi[0][0].imdb_score;
-    } else {
-        // console.log("category " + category);
-        while (imageNumber>=0){
-            imageCategory[imageNumber].style.backgroundImage = `url(${resultApi[category][imageNumber].image_url})`;
-            // console.log("resultApi[category][imageNumber].image_url : " + resultApi[category][imageNumber].image_url)
-            imageNumber--;
-        };
-        // console.log("fillImageCategory end");
-    }
-   };
+// function fillImageCat(categorylist, category) {
+//     // console.log("fillImageCat start");
+//     let imageCategory = document.querySelectorAll(categorylist);
+//     // console.log("imageCategory.lenght " + imageCategory.length);
+//     let imageNumber = 6;
+//     if (categorylist == "#bestMovie .section__rightHero") {
+//         imageCategory[0].style.backgroundImage = `url(${resultApi[0][0].image_url})`;
+//         document.getElementById("titleHero").innerHTML = resultApi[0][0].title;
+//         document.getElementById("textHero").innerHTML = "imdb score: " + resultApi[0][0].imdb_score;
+//     } else {
+//         // console.log("category " + category);
+//         while (imageNumber>=0){
+//             imageCategory[imageNumber].style.backgroundImage = `url(${resultApi[category][imageNumber].image_url})`;
+//             // console.log("resultApi[category][imageNumber].image_url : " + resultApi[category][imageNumber].image_url)
+//             imageNumber--;
+//         };
+//         // console.log("fillImageCategory end");
+//     }
+//    };
 
-function loopFillImageCat() {
-    // console.log("loopFillImageCat start");
-    // console.log("categoryList.length: " + categoryList.length)
-    for (let category=0; category<categoryList.length; category++){
-        fillImageCat(categoryList[category], category);
-    }
-};
+// function loopFillImageCat() {
+//     // console.log("loopFillImageCat start");
+//     // console.log("categoryList.length: " + categoryList.length)
+//     for (let category=0; category<categoryList.length; category++){
+//         fillImageCat(categoryList[category], category);
+//     }
+// };
 
-function requestApi(urlRequest, index, elementQty) {
-        // console.log("requestApi start");
-        // console.log("requestApi - index & elmtQty :" + index + " & " + elementQty);
-        fetch(urlRequest)
-            .then(response => response.json()
-            // .then(function(response) { return response.json()})
-                .then(function(jsonResponse) {
-                    // console.log("jsonResponse " + jsonResponse);
-                    for (let element=0; element<elementQty; element++){
-                        // console.log("element: " + element);
-                        resultApi[index].push(jsonResponse.results[element]);
-                        }
-                        loopFillImageCat();
-                })
-            )
-        // console.log("requestApiCategory end");
-};
+// function requestApi(urlRequest, index, elementQty) {
+//         // console.log("requestApi start");
+//         // console.log("requestApi - index & elmtQty :" + index + " & " + elementQty);
+//         fetch(urlRequest)
+//             .then(response => response.json()
+//             // .then(function(response) { return response.json()})
+//                 .then(function(jsonResponse) {
+//                     // console.log("jsonResponse " + jsonResponse);
+//                     for (let element=0; element<elementQty; element++){
+//                         // console.log("element: " + element);
+//                         resultApi[index].push(jsonResponse.results[element]);
+//                         }
+//                         loopFillImageCat();
+//                 })
+//             )
+//         // console.log("requestApiCategory end");
+// };
 
-function loopApiRequest() {
-    // console.log("loopApiRequest start");
-    // console.log("urlRequest.length: " + urlRequest.length)
-    for (let i=0; i<urlRequest.length; i++){
-        requestApi(urlRequest[i][0], i, 5);
-        requestApi(urlRequest[i][1], i, 2);
-    }
-};
+// function loopApiRequest() {
+//     // console.log("loopApiRequest start");
+//     // console.log("urlRequest.length: " + urlRequest.length)
+//     for (let i=0; i<urlRequest.length; i++){
+//         requestApi(urlRequest[i][0], i, 5);
+//         requestApi(urlRequest[i][1], i, 2);
+//     }
+// };
 
-function main() {
-    loopApiRequest();
-    // while (true) {
-    // if (resultApi[0].length == 7 && resultApi[1].length == 7 &&
-    //     resultApi[2].length == 7 && resultApi[3].length == 7){
-    //         break
-    //     }
-    // }
-    // setTimeout(() => loopFillImageCat(), 900);
-    // loopFillImageCat();
-};
+// function main() {
+//     loopApiRequest();
+//     // while (true) {
+//     // if (resultApi[0].length == 7 && resultApi[1].length == 7 &&
+//     //     resultApi[2].length == 7 && resultApi[3].length == 7){
+//     //         break
+//     //     }
+//     // }
+//     // setTimeout(() => loopFillImageCat(), 900);
+//     // loopFillImageCat();
+// };
 
-main();
+// main();
 
 
 // const loopApiRequest = () => {

@@ -126,6 +126,7 @@ ul.header__mainMenu li{
     display: flex;
     flex-grow: 2;
     align-items: center;
+    cursor:default !important;
 }
 
 .imageModal{
@@ -149,7 +150,8 @@ ul.header__mainMenu li{
     border: 0px;
 }
 
-.section__content{
+.section__content, 
+.tiles{
     display: flex;
     flex-grow: 1;
 }
@@ -167,11 +169,6 @@ ul.header__mainMenu li{
 
 .section__arrow:hover {
     transform: scale(2);
-}
-
-.tiles{
-    display: flex;
-    flex-grow: 1;
 }
 
 .tiles__tile{
