@@ -70,19 +70,19 @@ function createModal(){
     for (let b=1; b<btn.length; b++){
         btn[b].onclick = function(){
             modal.style.display = "flex";
-            modalDetails[0].classList.add("section");
-            modalDetails[0].style.backgroundImage = `url(${resultApi[b-1].image_url})`;
-            // modalDetails[1]
-            // modalDetails[2]
-            // modalDetails[3]
-            // modalDetails[4]
-            // modalDetails[5]
-            // modalDetails[6]
-            // modalDetails[7]
-            // modalDetails[8]
-            // modalDetails[9]
-            // modalDetails[10]
-            // modalDetails[11]
+            modalDetails[0].src = resultApi[b-1].image_url;
+            modalDetails[1].style.font = "bold" ;
+            modalDetails[1].innerHTML = resultApi[b-1].title;
+            modalDetails[2].innerHTML = "Genre: " + resultApi[b-1].genres;
+            modalDetails[3].innerHTML = "Année: " + resultApi[b-1].year;
+            modalDetails[4].innerHTML = "Rated: " + resultApi[b-1].votes;
+            modalDetails[5].innerHTML = "IMDb score: " + resultApi[b-1].imdb_score;
+            modalDetails[6].innerHTML = "Réalisateur: " + resultApi[b-1].directors;
+            modalDetails[7].innerHTML = "Acteurs: " + resultApi[b-1].actors;
+            // modalDetails[8].innerHTML ="Durée: " + resultApi[b-1].votes;
+            // modalDetails[9].innerHTML ="Pays: " + resultApi[b-1].votes;
+            // modalDetails[10].innerHTML ="Box office: " + resultApi[b-1].votes;
+            // modalDetails[11].innerHTML ="Résumé: " + resultApi[b-1].votes;
         }
     }
 };
@@ -90,7 +90,7 @@ function createModal(){
 function fillImage(){
     // fill the best movie section
     document.getElementById("titleHero").innerHTML = resultApi[0].title;
-    document.getElementById("textHero").innerHTML = "imdb score: " + resultApi[0].imdb_score;
+    document.getElementById("textHero").innerHTML = "IMDb score: " + resultApi[0].imdb_score;
 
     //fill all the categories
     let imageCategory = document.querySelectorAll(".imageModal");
