@@ -42,6 +42,7 @@ const urlRequest = [
 ];
 
 let resultApi = [];
+let dataUrl = [];
 
 function createModal(){
     // Get the modal
@@ -74,15 +75,15 @@ function createModal(){
             modalDetails[1].style.font = "bold" ;
             modalDetails[1].innerHTML = resultApi[b-1].title;
             modalDetails[2].innerHTML = "Genre: " + resultApi[b-1].genres;
-            modalDetails[3].innerHTML = "Année: " + resultApi[b-1].year;
-            modalDetails[4].innerHTML = "Rated: " + resultApi[b-1].votes;
+            modalDetails[3].innerHTML = "Date de sortie: " + resultApi[b-1].date_published;
+            modalDetails[4].innerHTML = "Rated: " + resultApi[b-1].Rated;
             modalDetails[5].innerHTML = "IMDb score: " + resultApi[b-1].imdb_score;
             modalDetails[6].innerHTML = "Réalisateur: " + resultApi[b-1].directors;
             modalDetails[7].innerHTML = "Acteurs: " + resultApi[b-1].actors;
-            // modalDetails[8].innerHTML ="Durée: " + resultApi[b-1].votes;
-            // modalDetails[9].innerHTML ="Pays: " + resultApi[b-1].votes;
-            // modalDetails[10].innerHTML ="Box office: " + resultApi[b-1].votes;
-            // modalDetails[11].innerHTML ="Résumé: " + resultApi[b-1].votes;
+            modalDetails[8].innerHTML ="Durée: " + resultApi[b-1].duration;
+            modalDetails[9].innerHTML ="Pays: " + resultApi[b-1].countries;
+            modalDetails[10].innerHTML ="Box office: " /*+ resultApi[b-1].votes*/;
+            modalDetails[11].innerHTML ="Résumé: " + resultApi[b-1].description;
         }
     }
 };
@@ -90,7 +91,7 @@ function createModal(){
 function fillImage(){
     // fill the best movie section
     document.getElementById("titleHero").innerHTML = resultApi[0].title;
-    document.getElementById("textHero").innerHTML = "IMDb score: " + resultApi[0].imdb_score;
+    document.getElementById("textHero").innerHTML = "Résumé: " + resultApi[0].long_description;
 
     //fill all the categories
     let imageCategory = document.querySelectorAll(".imageModal");
@@ -100,13 +101,24 @@ function fillImage(){
     }
 };
 
+function requestUrl(urlRequest){
+    return new Promise(resolve => {
+        fetch(urlRequest)
+        .then(response => response.json())
+        .then(jsonResponse => {
+            resultApi.push(jsonResponse);
+            resolve();
+        });
+    })
+};
+
 function requestApi(urlRequest, elemQty){
     return new Promise(resolve => {
         fetch(urlRequest)
         .then(response => response.json())
         .then(jsonResponse => {
             for (let i=0; i<elemQty; i++){
-                resultApi.push(jsonResponse.results[i]);
+                dataUrl.push(jsonResponse.results[i].url);
             }
             resolve();
         });
@@ -117,6 +129,9 @@ async function main(){
     for(let i=0; i<urlRequest.length; i++){ 
         await requestApi(urlRequest[i][0], 5);
         await requestApi(urlRequest[i][1], 2);
+    }
+    for(let i=0; i<dataUrl.length; i++){ 
+        await requestUrl(dataUrl[i]);
     }
     fillImage();
     createModal();
