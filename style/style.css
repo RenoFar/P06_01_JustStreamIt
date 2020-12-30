@@ -47,6 +47,7 @@ table {
 }
  /* end of reset css */
 
+/* The Body */
 body{
     max-width: 1024px;
     margin-left: auto;
@@ -55,6 +56,7 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* The Header */
 .header {
     display: flex;
     align-items: center;
@@ -79,6 +81,7 @@ ul.header__mainMenu li{
 	list-style: none;
 }
 
+/* The section */
 .section {
     display: flex;
     border: solid 3px black;
@@ -105,7 +108,6 @@ ul.header__mainMenu li{
 h2{
     font-weight: bolder;
     font-size: large;
-    /* padding: 3px; */
 }
 
 .section__leftHero .section__play{
@@ -124,14 +126,6 @@ h2{
     background-position: 80%;
     background-repeat: no-repeat;
     cursor:default !important;
-}
-
-.imageModal{
-    background-image: url('');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    cursor: pointer;
 }
 
 .section__title{
@@ -153,6 +147,7 @@ h2{
     flex-grow: 1;
 }
 
+ /* The Arrow */
 .section__arrow{
     display: flex;
     align-items: center;
@@ -173,7 +168,7 @@ h2{
     flex-grow: 1;
     margin: 3px;
     border: 2px solid black;
-    background-color: #000;
+    background-color: black;
     transition: 200ms all;
 }
 
@@ -181,24 +176,22 @@ h2{
     transform: scale(1.1);
 }
 
+/* The interactive slide */
+.imageModal{
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+}
+
 .slideDown{
     flex-grow: 0;
     border: none;
-    scale: 0;
     margin: 0;
 }
-
-@media only screen and (max-width: 600px) {
-    .section--category {
-        height: 100px;
-        }
-
-    .imageModal {
-        background-size: auto;
-        }
-  }
   
-   /* The Modal (background) */
+/* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -212,14 +205,16 @@ h2{
     background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
     justify-content: center;
   }
-  
+
+/* The Modal */
   .modal__content{
     display: flex;
     flex-direction: column;
     align-self: center;
     margin: 30px 10px;
     color: rgb(255, 255, 255);
-    min-width: 40%;
+    min-width: 30%;
+    max-width: 70%;
     width: auto; 
     height: auto; 
     max-height: 90%;
@@ -235,7 +230,7 @@ h2{
     padding: 5px;
   }
 
-  /* The Close Button */
+/* The Close Button */
   .close {
     float: right;
     color: #aaa;
@@ -249,3 +244,18 @@ h2{
     text-decoration: none;
     cursor: pointer;
   } 
+
+/* The responsive modification */
+@media only screen and (max-width: 600px) {
+    .section--category {
+        height: 100px;
+        }
+
+    .imageModal {
+        background-size: auto;
+        }
+
+    .modal__content{
+        max-width: 90%;
+    }
+}

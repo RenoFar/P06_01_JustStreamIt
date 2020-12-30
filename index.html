@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style/style.css" />
+  <script src="/js/allFonctions.js"></script>
   <title>JustStreamIt</title>
 </head>
 <body>
@@ -20,6 +21,7 @@
     </nav>
   </header>
 
+  <!-- best movie section -->
   <section id="bestMovie" class="section section--hero">
     <div class="section__leftHero">
       <h2 id="titleHero">Titre de la vidéo</h2>
@@ -27,9 +29,9 @@
       <button id="play" class="section__play">Play</button>
     </div>
     <div class="section__rightHero imageModal"></div>
-    </div>  
   </section>
 
+  <!-- best rating category -->
   <div class="section__title">
     <h2>Films les mieux notés</h2>
   </div>
@@ -61,6 +63,7 @@
   </div>
   </section>
 
+  <!-- first category -->
   <div class="section__title">
     <h2>Films d'action les mieux notés</h2>
   </div>
@@ -92,6 +95,7 @@
   </div>
   </section>
 
+   <!-- second category -->
   <div class="section__title">
     <h2>Films d'animation les mieux notés</h2>
   </div>
@@ -123,6 +127,7 @@
   </div>
   </section>
 
+  <!-- third category -->
   <div class="section__title">
     <h2>Films d'histoire les mieux notés</h2>
   </div>
@@ -156,11 +161,10 @@
 
   <!-- The Modal -->
   <div id="myModal" class="modal">
-    <!-- Modal content -->
     <div class="modal__content">
       <span class="close">&times;</span>
-      <img class="modal__content--details"></img>
-      <h2 class="modal__content--details"></h2>
+      <img src="empty.jpg"  alt=" " class="modal__content--details">
+      <h2 class="modal__content--details">Titre</h2>
       <div class="modal__content--details"></div>
       <div class="modal__content--details"></div>
       <div class="modal__content--details"></div>
@@ -173,9 +177,5 @@
       <div class="modal__content--details"></div>
     </div>
   </div>
-
-  </body>
-  <script type="text/javascript" src="/js/allFonctions.js"></script>
-  <!-- <script type="text/javascript" src="/js/fonctions.js"></script>
-  <script type="text/javascript" src="/js/requestApi.js"></script> -->
+</body>
 </html>
