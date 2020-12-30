@@ -68,16 +68,18 @@ function createModal(){
             modal.style.display = "flex";
             modalDetails[0].src = resultApi[b-1].image_url;
             modalDetails[1].style.font = "bold" ;
-            modalDetails[1].innerHTML = resultApi[b-1].title;
+            modalDetails[1].innerHTML = resultApi[b-1].original_title;
             modalDetails[2].innerHTML = "Genre: " + resultApi[b-1].genres;
             modalDetails[3].innerHTML = "Date de sortie: " + resultApi[b-1].date_published;
             modalDetails[4].innerHTML = "Rated: " + resultApi[b-1].Rated;
             modalDetails[5].innerHTML = "IMDb score: " + resultApi[b-1].imdb_score;
             modalDetails[6].innerHTML = "Réalisateur: " + resultApi[b-1].directors;
             modalDetails[7].innerHTML = "Acteurs: " + resultApi[b-1].actors;
-            modalDetails[8].innerHTML ="Durée: " + resultApi[b-1].duration;
+            modalDetails[8].innerHTML ="Durée (Min): " + resultApi[b-1].duration;
             modalDetails[9].innerHTML ="Pays: " + resultApi[b-1].countries;
-            modalDetails[10].innerHTML ="Box office: " /*+ resultApi[b-1].votes*/;
+            // format the worldwide_gross_income
+            let boxOffice = String(resultApi[b-1].worldwide_gross_income).replace(/(.)(?=(\d{3})+$)/g,'$1,');
+            modalDetails[10].innerHTML ="Box office ($): " + boxOffice;
             modalDetails[11].innerHTML ="Résumé: " + resultApi[b-1].description;
         }
     }
