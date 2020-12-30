@@ -15,5 +15,6 @@ Elle doit permettre de visualiser en temps réel un classement de films et d'ouv
 ## Installation:
 
 1. Cloner le projet depuis cette [page](https://github.com/RenoFar/P06_01_JustStreamIt "https://github.com/RenoFar/P06_01_JustStreamIt")
-2. Installer l'API locale fourni dans le dossier cloner et suivre les instructions de son README pour finaliser son installation.
-3. ouvrir le fichier index.html dans votre navigateur internet.
+2. Installer l'[API locale](https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR "OCMovies-API-EN-FR")  fourni dans le dossier cloné et suivre les instructions de son README pour finaliser son installation.
+3. Executer l'API locale en environnement virtuel comme indiqué dans son README.
+4. Ouvrir le fichier index.html dans votre navigateur internet.
